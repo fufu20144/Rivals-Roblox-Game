@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivals 1v1 - Mini Jeu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚡ RIVALS 1v1 ⚡</h1>
+            <p>Combat contre un PNJ</p>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="stats-container">
+            <div class="player-stats">
+                <h2>🎮 TOI</h2>
+                <div class="health-bar">
+                    <div id="playerHealth" class="health-fill"></div>
+                </div>
+                <p id="playerHealthText">100/100</p>
+                <p id="playerEnergy">Énergie: 100/100</p>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="npc-stats">
+                <h2>🤖 PNJ</h2>
+                <div class="health-bar">
+                    <div id="npcHealth" class="health-fill"></div>
+                </div>
+                <p id="npcHealthText">100/100</p>
+                <p id="npcDifficulty">Difficulté: Normal</p>
+            </div>
+        </div>
+
+        <!-- Arena -->
+        <div id="gameArena" class="arena">
+            <div id="player" class="character player-char">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="legs"></div>
+            </div>
+
+            <div id="npc" class="character npc-char">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="legs"></div>
+            </div>
+
+            <div id="message" class="message"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="action-buttons">
+                <button id="attackBtn" class="btn btn-attack">🥊 Attaquer</button>
+                <button id="heavyBtn" class="btn btn-heavy">💥 Heavy Attack</button>
+                <button id="dodgeBtn" class="btn btn-dodge">🏃 Esquiver</button>
+                <button id="blockBtn" class="btn btn-block">🛡️ Bloquer</button>
+            </div>
+
+            <div class="difficulty-select">
+                <label>Difficulté:</label>
+                <select id="difficultySelect">
+                    <option value="facile">Facile</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="difficile">Difficile</option>
+                </select>
+            </div>
+
+            <button id="startBtn" class="btn btn-start">▶️ Démarrer le Combat</button>
+            <button id="resetBtn" class="btn btn-reset">🔄 Reset</button>
+        </div>
+
+        <!-- Tablet -->
+        <div id="tablet" class="tablet">
+            <div class="tablet-header">📱 TABLET COMMANDS</div>
+            <div class="tablet-buttons">
+                <button class="tablet-btn" onclick="healPlayer()">Heal (P)</button>
+                <button class="tablet-btn" onclick="speedBoost()">Speed+ (S)</button>
+                <button class="tablet-btn" onclick="godMode()">God Mode (G)</button>
+                <button class="tablet-btn" onclick="freezeNPC()">Freeze NPC (F)</button>
+                <button class="tablet-btn" onclick="spawnNewNPC()">New NPC (N)</button>
+                <button class="tablet-btn" onclick="killNPC()">Kill NPC (K)</button>
+            </div>
+        </div>
+
+        <!-- Combat Log -->
+        <div class="log-container">
+            <div class="log-header">📊 Combat Log</div>
+            <div id="combatLog" class="log"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
